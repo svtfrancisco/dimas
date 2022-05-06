@@ -20,19 +20,36 @@ export default function Index({ backlog, headline }) {
   const { data: session } = useSession();
   if (!session) {
     return (
-      <div>
-        Not signed in <br />
-        <button onClick={() => signIn()}>Sign in</button>
-      </div>
+      <main>
+        <Header>
+          <div className="d-flex gap-3 align-items-center py-2">
+            <div>Not signed in</div>
+            <button onClick={() => signIn()} className="btn btn-primary">
+              Sign in
+            </button>
+          </div>
+        </Header>
+        <section className="container py-5">
+          <div className="alert alert-secondary">
+            You need be logged in to use dimas
+          </div>
+        </section>
+      </main>
     );
   }
   return (
     <main>
-      <div>
-        Signed in as {session.user.name} <br />
-        <button onClick={() => signOut()}>Sign out</button>
-      </div>
-      <Header />
+      <Header>
+        <div
+          className="d-flex gap-3 align-items-center py-2"
+          style={{ lineHeight: 1 }}
+        >
+          <div>Signed in as {session.user.name}</div>
+          <div onClick={() => signOut()} className="pointer-link">
+            <span className="material-symbols-outlined">logout</span>
+          </div>
+        </div>
+      </Header>
       <SubHeader title="Tickets">
         <Link href="/ticket/create" passHref>
           <button className="btn btn-success btn-lg">Add </button>

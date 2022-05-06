@@ -1,10 +1,11 @@
-export function Header() {
+export function Header({ children }) {
   return (
     <div className="my-2 container">
-      <header>
+      <header className="d-flex justify-content-between">
         <div>
           <h2 className="text-primary mb-0 py-3">Dimas</h2>
         </div>
+        <div>{children}</div>
       </header>
     </div>
   );
