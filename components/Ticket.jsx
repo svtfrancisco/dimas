@@ -24,13 +24,13 @@ export function TicketCard({ ticket }) {
       </div>
       <div className="card-footer d-flex justify-content-between">
         <div className="d-flex gap-4">
-          <Link href={"/ticket/update/?id=" + ticket._id}>
+          <Link href={"/ticket/update/?id=" + ticket._id} passHref>
             <span className="d-flex gap-2 pointer-link">
               <span className="material-symbols-outlined">settings</span>
               <span>Edit</span>
             </span>
           </Link>
-          <Link href={modifyLink}>
+          <Link href={modifyLink} passHref>
             <span className="d-flex gap-2 pointer-link">
               <span className="material-symbols-outlined">
                 {ticket.status === "headline"
@@ -45,7 +45,7 @@ export function TicketCard({ ticket }) {
         </div>
         {ticket.status === "headline" && (
           <div>
-            <Link href={completeLink}>
+            <Link href={completeLink} passHref>
               <span className="d-flex gap-2 pointer-link">
                 <span className="material-symbols-outlined">check</span>
                 <span>Complete</span>

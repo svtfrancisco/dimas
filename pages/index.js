@@ -34,14 +34,14 @@ export default function Index({ backlog, headline }) {
       </div>
       <Header />
       <SubHeader title="Tickets">
-        <Link href="/ticket/create">
+        <Link href="/ticket/create" passHref>
           <button className="btn btn-success btn-lg">Add </button>
         </Link>
       </SubHeader>
       <SixGrid
         title="Headline"
         items={headline.map((ticket) => (
-          <TicketCard ticket={ticket} />
+          <TicketCard key={ticket._id} ticket={ticket} />
         ))}
         empty={
           <div className="alert alert-secondary">Headline is empty now!</div>
@@ -50,7 +50,7 @@ export default function Index({ backlog, headline }) {
       <SixGrid
         title="Backlog"
         items={backlog.map((ticket) => (
-          <TicketCard ticket={ticket} />
+          <TicketCard key={ticket._id} ticket={ticket} />
         ))}
         empty={
           <div className="alert alert-secondary">Backlog is empty now!</div>

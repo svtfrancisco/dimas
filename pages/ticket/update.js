@@ -34,7 +34,7 @@ export default function DebitUpdate({ ticket }) {
           </form>
         </section>
         <section>
-          <Link href={"/api/ticket/delete?id=" + ticket._id}>
+          <Link href={"/api/ticket/delete?id=" + ticket._id} passHref>
             <button className="btn btn-danger">Delete ticket</button>
           </Link>
         </section>
