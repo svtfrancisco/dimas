@@ -1,0 +1,19 @@
+@import "~bootstrap/scss/bootstrap.scss";
+
+.btn-small {
+  height: 34px !important;
+  padding: 0 15px;
+}
+
+.pointer-link {
+  cursor: pointer;
+  &:hover {
+    color: $primary;
+  }
+}
+
+.hidden {
+  opacity: 0;
+  position: absolute;
+  left: -99999px;
+}
